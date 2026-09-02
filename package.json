@@ -1,0 +1,22 @@
+{
+  "name": "markdown-jupiter-document-website",
+  "version": "1.0.0",
+  "description": "a custom website which can use markdown and jupyter notebook as a page",
+  "license": "ISC",
+  "author": "Mohammad Sajjad Sharifi Panah",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@yao-pkg/pkg": "^6.22.0",
+    "express": "^4.18.2",
+    "highlight.js": "^11.9.0",
+    "marked": "^9.1.6"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "nodemon": "^3.0.1"
+  }
+}

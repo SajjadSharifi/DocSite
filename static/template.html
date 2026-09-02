@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%Title%} - مستندات</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <!-- MathJax برای نمایش فرمول‌های ریاضی -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+
+<body>
+    <!-- SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </symbol>
+        <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </symbol>
+        <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        </symbol>
+        <symbol id="icon-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+            <polyline points="13 2 13 9 20 9"></polyline>
+        </symbol>
+        <symbol id="icon-jupyter" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M7.157 22.201c-1.147 0-2.079-.932-2.079-2.079s.932-2.079 2.079-2.079 2.079.932 2.079 2.079-.932 2.079-2.079 2.079zm5.497-2.783c-.571 0-1.035-.464-1.035-1.035s.464-1.035 1.035-1.035 1.035.464 1.035 1.035-.464 1.035-1.035 1.035zm5.499-2.576c-.754 0-1.365-.611-1.365-1.365s.611-1.365 1.365-1.365 1.365.611 1.365 1.365-.611 1.365-1.365 1.365zM7.142 17.96c-.696 0-1.261-.565-1.261-1.261s.565-1.261 1.261-1.261 1.261.565 1.261 1.261-.565 1.261-1.261 1.261zM12.627 15.9c-.901 0-1.632-.731-1.632-1.632s.731-1.632 1.632-1.632 1.632.731 1.632 1.632-.731 1.632-1.632 1.632z" />
+        </symbol>
+        <symbol id="icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </symbol>
+    </svg>
+
+    <!-- نوار بالا -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <button class="hamburger-menu" title="منو">
+                <svg class="icon">
+                    <use href="#icon-menu"></use>
+                </svg>
+            </button>
+
+            <div class="nav-logo">
+                <svg class="icon logo-icon">
+                    <use href="#icon-logo"></use>
+                </svg>
+                <span class="logo-text">{%Title%}</span>
+            </div>
+
+            <div class="nav-actions">
+                <button class="search-button" id="searchButton" title="جستجو">
+                    <svg class="icon">
+                        <use href="#icon-search"></use>
+                    </svg>
+                </button>
+
+                <button class="theme-toggle" title="تغییر تم">
+                    <svg class="icon theme-icon">
+                        <use href="#icon-moon"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal جستجو -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-overlay"></div>
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <div class="search-input-wrapper">
+                    <svg class="icon search-modal-icon">
+                        <use href="#icon-search"></use>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="جستجو در مستندات...">
+                    <button class="search-modal-close" title="بستن">
+                        <svg class="icon">
+                            <use href="#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- نتایج جستجو اینجا نمایش داده می‌شوند -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay برای hamburger menu -->
+    <div class="overlay" id="sidebarOverlay"></div>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="navigation">
+                {%Navigation%}
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article class="document-content">
+                {%Content%}
+            </article>
+        </main>
+
+        <!-- TOC Container -->
+        <div class="toc-container" id="tocContainer"></div>
+    </div>
+
+    <!-- دکمه TOC برای موبایل -->
+    <button class="mobile-toc-button" id="mobileTocButton" title="فهرست مطالب">
+        <svg class="icon">
+            <use href="#icon-list"></use>
+        </svg>
+    </button>
+
+    <!-- TOC برای موبایل -->
+    <div class="mobile-toc" id="mobileToc">
+        <div class="mobile-toc-header">
+            <span>در این صفحه</span>
+            <button title="بستن">
+                <svg class="icon">
+                    <use href="#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-toc-content" id="mobileTocContent"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-text">{%FooterText%} <span class="footer-author">{%Author%}</span></span>
+            <span class="footer-separator">|</span>
+            <span class="footer-year">© {%Year%}</span>
+        </div>
+    </footer>
+
+    <!-- Load modules -->
+    <script src="/static/js/modules/themeManager.js"></script>
+    <script src="/static/js/modules/mobileManager.js"></script>
+    <script src="/static/js/modules/searchManager.js"></script>
+    <script src="/static/js/modules/tocManager.js"></script>
+    <script src="/static/js/modules/codeCopyManager.js"></script>
+    <script src="/static/js/modules/mathManager.js"></script>
+    <script src="/static/js/modules/uiManager.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+
+
+</html>
