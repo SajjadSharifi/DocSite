@@ -1,5 +1,7 @@
 #Temp Folders for this project
-docs/
+static/css/before
+docs/test/
+docs/images/test
 DocsSite-Portable/
 node-v24.20.0-win-x64/
 # Logs

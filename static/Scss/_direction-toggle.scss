@@ -1,0 +1,85 @@
+@use 'variables' as *;
+
+// ===== Direction Toggle Bar =====
+.direction-toggle-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 16px;
+    margin-bottom: 25px;
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-lg;
+    flex-wrap: wrap;
+    transition: all $transition-base;
+
+    @include mobile {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+}
+
+.direction-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-weight: 500;
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    @include mobile {
+        font-size: 0.85rem;
+
+        span {
+            display: none;
+        }
+    }
+}
+
+.direction-toggle-buttons {
+    display: flex;
+    gap: 6px;
+    background-color: var(--content-bg);
+    padding: 4px;
+    border-radius: $radius-sm;
+    border: 1px solid var(--border-color);
+}
+
+.direction-btn {
+    padding: 6px 14px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: all $transition-fast;
+    font-weight: 500;
+
+    &:hover {
+        opacity: 0.9;
+        background-color: var(--sidebar-hover);
+    }
+
+    &.active {
+        background-color: var(--accent-color);
+        color: white;
+        opacity: 1;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+    }
+
+    @include mobile {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}

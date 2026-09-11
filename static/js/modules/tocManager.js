@@ -49,7 +49,7 @@ class TocManager {
 
         const tocHeader = document.createElement('div');
         tocHeader.className = 'toc-header';
-        tocHeader.textContent = 'در این صفحه';
+        tocHeader.textContent = 'On This Page';
 
         const tocList = document.createElement('ul');
         tocList.className = 'toc-list';

@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{%Title%} - مستندات</title>
+    <title>{%Title%}</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
-    <!-- MathJax برای نمایش فرمول‌های ریاضی -->
+    <!-- MathJax For Showing Mathmatic formila -->
     <script>
         MathJax = {
             tex: {
@@ -96,9 +96,15 @@
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
         </symbol>
+        <symbol id="icon-type" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 7 4 4 20 4 20 7"></polyline>
+            <line x1="9" y1="20" x2="15" y2="20"></line>
+            <line x1="12" y1="4" x2="12" y2="20"></line>
+        </symbol>
     </svg>
 
-    <!-- نوار بالا -->
+    <!-- Top Navigation -->
     <nav class="top-nav">
         <div class="nav-inner">
             <button class="hamburger-menu" title="منو">
@@ -130,7 +136,7 @@
         </div>
     </nav>
 
-    <!-- Modal جستجو -->
+    <!-- Search Modal  -->
     <div class="search-modal" id="searchModal">
         <div class="search-modal-overlay"></div>
         <div class="search-modal-content">
@@ -148,12 +154,12 @@
                 </div>
             </div>
             <div class="search-results" id="searchResults">
-                <!-- نتایج جستجو اینجا نمایش داده می‌شوند -->
+                <!-- Result Of Search Will be show here -->
             </div>
         </div>
     </div>
 
-    <!-- Overlay برای hamburger menu -->
+    <!-- Overlay hamburger menu -->
     <div class="overlay" id="sidebarOverlay"></div>
 
     <div class="app-container">
@@ -173,18 +179,18 @@
         <div class="toc-container" id="tocContainer"></div>
     </div>
 
-    <!-- دکمه TOC برای موبایل -->
+    <!-- TOC botton For Mobile -->
     <button class="mobile-toc-button" id="mobileTocButton" title="فهرست مطالب">
         <svg class="icon">
             <use href="#icon-list"></use>
         </svg>
     </button>
 
-    <!-- TOC برای موبایل -->
+    <!-- TOC For Mobile -->
     <div class="mobile-toc" id="mobileToc">
         <div class="mobile-toc-header">
-            <span>در این صفحه</span>
-            <button title="بستن">
+            <span>On this Page</span>
+            <button title="Close">
                 <svg class="icon">
                     <use href="#icon-close"></use>
                 </svg>
@@ -208,6 +214,7 @@
     <script src="/static/js/modules/tocManager.js"></script>
     <script src="/static/js/modules/codeCopyManager.js"></script>
     <script src="/static/js/modules/mathManager.js"></script>
+    <script src="/static/js/modules/directionManager.js"></script>
     <script src="/static/js/modules/uiManager.js"></script>
     <script src="/static/js/main.js"></script>
 </body>

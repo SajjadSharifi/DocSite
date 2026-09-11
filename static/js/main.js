@@ -16,12 +16,14 @@ class App {
         this.mobileManager = new MobileManager();
         this.searchManager = new SearchManager();
 
+        // Delay TOC creation to let MathJax finish
         setTimeout(() => {
             this.tocManager = new TocManager();
         }, 500);
 
         this.codeCopyManager = new CodeCopyManager();
         this.mathManager = new MathManager();
+        this.directionManager = new DirectionManager();  // NEW
         this.uiManager = new UiManager();
 
         this.handleInitialHash();

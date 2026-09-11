@@ -1,0 +1,125 @@
+// ===== CSS Variables (Theme) =====
+:root {
+    --sidebar-width: 280px;
+    --toc-width: 280px;
+    --content-max-width: 1400px;
+    --nav-height: 60px;
+    --sidebar-bg: transparent;
+    --sidebar-hover: rgba(0, 0, 0, 0.05);
+    --content-bg: #ffffff;
+    --text-color: #333;
+    --border-color: #e1e1e1;
+    --accent-color: #4a90e2;
+    --hover-bg: rgba(0, 0, 0, 0.03);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --code-bg: #1e1e2e;
+    --code-text: #e1e1e6;
+    --nav-bg: rgba(255, 255, 255, 0.7);
+    --nav-border: rgba(0, 0, 0, 0.08);
+    --active-bg: rgba(74, 144, 226, 0.1);
+    --active-text: #1976d2;
+    --content-font-size: 1.1rem;
+    --content-line-height: 1.9;
+    --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb-hover: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] {
+    --sidebar-bg: transparent;
+    --sidebar-hover: rgba(255, 255, 255, 0.05);
+    --content-bg: #1a1a1a;
+    --text-color: #e1e1e6;
+    --border-color: #333;
+    --accent-color: #6cb2eb;
+    --hover-bg: rgba(255, 255, 255, 0.03);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --code-bg: #0d0d0d;
+    --code-text: #e1e1e6;
+    --nav-bg: rgba(26, 26, 26, 0.7);
+    --nav-border: rgba(255, 255, 255, 0.08);
+    --active-bg: rgba(108, 178, 235, 0.15);
+    --active-text: #6cb2eb;
+    --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
+}
+
+// ===== SCSS Variables =====
+$transition-base: 0.3s ease;
+$transition-fast: 0.2s;
+$radius-sm: 8px;
+$radius-md: 10px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-round: 20px;
+
+$z-overlay: 998;
+$z-mobile-toc: 999;
+$z-sidebar: 100;
+$z-mobile-toc-btn: 997;
+$z-nav: 1000;
+$z-search-modal: 2000;
+$z-image-viewer: 3000;
+
+$breakpoint-mobile: 960px;
+$breakpoint-tablet-min: 961px;
+$breakpoint-tablet-max: 1230px;
+
+$font-stack: 'Vazir', 'IRANSans', 'Segoe UI', Tahoma, sans-serif;
+$mono-stack: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+// ===== Mixins =====
+@mixin backdrop-blur($blur: 30px, $saturate: 180%) {
+    backdrop-filter: blur($blur) saturate($saturate);
+    -webkit-backdrop-filter: blur($blur) saturate($saturate);
+}
+
+@mixin mobile {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $breakpoint-tablet-max) and (min-width: $breakpoint-tablet-min) {
+        @content;
+    }
+}
+
+@mixin circle-button($size: 35px) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+}
+
+// ===== Custom Scrollbar Placeholder =====
+%custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+        transition: background $transition-base;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover);
+    }
+}

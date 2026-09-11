@@ -1,0 +1,78 @@
+@use 'variables' as *;
+
+// ===== Mobile =====
+@include mobile {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .mobile-toc {
+        display: block;
+    }
+
+    .mobile-toc-button {
+        display: flex !important;
+    }
+
+    .nav-inner {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .logo-text {
+        max-width: none;
+        flex: 1;
+        font-size: 1.1rem;
+        text-align: right;
+    }
+
+    .logo-icon {
+        font-size: 1.3rem;
+    }
+
+    .search-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    .cell-input code,
+    .output pre {
+        font-size: 1rem;
+    }
+}
+
+// ===== Tablet =====
+@include tablet {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .toc-container {
+        display: block;
+    }
+
+    .mobile-toc-button,
+    .mobile-toc {
+        display: none;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .logo-icon {
+        font-size: 1.3rem;
+    }
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+}
