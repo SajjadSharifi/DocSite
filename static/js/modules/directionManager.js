@@ -36,6 +36,8 @@ class DirectionManager {
 
         const bar = document.createElement('div');
         bar.className = 'direction-toggle-bar';
+        // Force LTR on the bar itself to prevent mirroring
+        bar.setAttribute('dir', 'ltr');
         bar.innerHTML = `
             <div class="direction-toggle-label">
                 <svg class="icon"><use href="#icon-type"></use></svg>
@@ -97,7 +99,7 @@ class DirectionManager {
         }
     }
 
-    // Force RTL on all text elements
+    // Force RTL on all text elements (skip the toggle bar and code blocks)
     applyRTL(content) {
         content.setAttribute('dir', 'rtl');
         content.style.direction = 'rtl';
@@ -107,13 +109,18 @@ class DirectionManager {
         );
 
         elements.forEach(el => {
+            // Skip elements inside the direction toggle bar
+            if (el.closest('.direction-toggle-bar')) return;
+            // Skip code elements
+            if (el.closest('pre') || el.closest('code')) return;
+
             el.setAttribute('dir', 'rtl');
             el.style.direction = 'rtl';
             el.style.textAlign = 'right';
         });
     }
 
-    // Force LTR on all text elements
+    // Force LTR on all text elements (skip the toggle bar and code blocks)
     applyLTR(content) {
         content.setAttribute('dir', 'ltr');
         content.style.direction = 'ltr';
@@ -123,6 +130,11 @@ class DirectionManager {
         );
 
         elements.forEach(el => {
+            // Skip elements inside the direction toggle bar
+            if (el.closest('.direction-toggle-bar')) return;
+            // Skip code elements
+            if (el.closest('pre') || el.closest('code')) return;
+
             el.setAttribute('dir', 'ltr');
             el.style.direction = 'ltr';
             el.style.textAlign = 'left';
@@ -139,8 +151,9 @@ class DirectionManager {
         );
 
         elements.forEach(el => {
-            // Skip elements inside <pre> or <code>
+            // Skip code elements and direction toggle bar
             if (el.closest('pre') || el.closest('code')) return;
+            if (el.closest('.direction-toggle-bar')) return;
 
             const text = el.textContent.trim();
             if (!text) return;
