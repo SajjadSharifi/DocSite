@@ -20,9 +20,8 @@ This app displays both **Jupyter Notebook** (`.ipynb`) and **Markdown** (`.md`) 
 You can use PNG, JPG, JPEG, and other common image formats—this was just an example.
 
 For instance, I put a screenshot here:
-![اسکرین‌شات](images/1.png)
 
-![Screenshot](images/screenshot.jpg)
+![Screenshot](images/1.png)
 
 ### Important: Relative Paths
 
@@ -52,7 +51,7 @@ You can also add `.ipynb` files to the `docs` folder. They will be rendered like
 
 ## Folder Structure
 
-Put all your documentation inside the `docs` folder. You can create subfolders—they will appear as collapsible sections in the sidebar.
+Put all your documentation inside the `docs` folder. You can create subfolders, they will appear as collapsible sections in the sidebar.
 
 Example:
 
