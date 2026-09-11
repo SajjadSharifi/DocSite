@@ -56,22 +56,22 @@
     }
 }
 
-// Force the buttons to be on the RIGHT side
+// Container - subtle background
 .direction-toggle-buttons {
     display: flex;
     flex-direction: row !important;
-    gap: 6px;
-    background-color: var(--content-bg);
-    padding: 4px;
+    gap: 2px;
+    background-color: var(--sidebar-bg);
+    padding: 3px;
     border-radius: $radius-sm;
     border: 1px solid var(--border-color);
     direction: ltr !important;
-    text-align: left !important;
     unicode-bidi: isolate;
     order: 2 !important; // Ensure buttons come second
     margin-left: auto !important; // Push buttons to the right
 }
 
+// Inactive buttons
 .direction-btn {
     padding: 6px 14px;
     background: transparent;
@@ -81,7 +81,7 @@
     font-family: inherit;
     font-size: 0.85rem;
     color: var(--text-color);
-    opacity: 0.6;
+    opacity: 0.5;
     transition: all $transition-fast;
     font-weight: 500;
     direction: ltr !important;
@@ -89,16 +89,16 @@
     unicode-bidi: isolate;
 
     &:hover {
-        opacity: 0.9;
-        background-color: var(--sidebar-hover);
+        opacity: 0.85;
     }
 
+    // Active button - subtle filled state, no glow
     &.active {
-        background-color: var(--accent-color);
-        color: white;
+        background-color: var(--content-bg);
+        color: var(--text-color);
         opacity: 1;
         font-weight: 600;
-        box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+        // No box-shadow, no glow
     }
 
     @include mobile {
