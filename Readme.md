@@ -1,5 +1,3 @@
-## فایل `README.md`:
-
 # DocSite
 
 A self-hosted documentation site for Markdown and Jupyter Notebook files with full-text search, dark mode, and RTL support.
