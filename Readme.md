@@ -53,10 +53,85 @@ An awesome and easy way to build your project's documentation using **Markdown**
 
 - Place your `.md` or `.ipynb` files inside the `docs` folder.
 - You can organize them in subfolders, they'll appear as collapsible sections in the sidebar.
-- The first file (usually `index.md`) will be your home page.
+- The first file will be your home page.
 
 ## Quick Guide
 
 A full **Quick Guide** is included in the docs folder. It covers:
 - How to add images
 - Tips for writing documentation
+
+---
+## Customization
+
+you can customize the site by editing `server.js`. Look for the `CONFIG` object at the top:
+
+```javascript
+const CONFIG = {
+    author: 'Your Name',
+    siteName: 'Documentation',
+    footerText: 'Built with'
+};
+
+const PORT = 3000;
+```
+### Change the Port
+
+Change `PORT` if port 3000 is already in use:
+
+```javascript
+const PORT = 8080;
+```
+
+Then open `http://localhost:8080` instead.
+
+### Change the Site Title
+The site title comes from the first heading (`# Title`) of each Markdown file, so just edit your `.md` files.
+
+### Change Colors and Theme
+All colors are defined as **CSS variables** inside the `_variables.scss` file, located in the `scss/` directory. Open it and look for the `:root` section:
+
+```scss
+// scss/_variables.scss
+:root {
+    --accent-color: #4a90e2;   // Main accent color
+    --content-bg: #ffffff;      // Background color
+    --text-color: #333;         // Text color
+    // ... other variables
+}
+```
+
+Change these values to customize the appearance. The dark theme uses the same variables under the `[data-theme="dark"]` selector in the same file:
+
+```scss
+// scss/_variables.scss
+[data-theme="dark"] {
+    --accent-color: #6cb2eb;
+    --content-bg: #1a1a1a;
+    --text-color: #e1e1e6;
+    // ... other dark theme variables
+}
+```
+
+#### After Making Changes
+Since the project uses SCSS, you need to recompile the styles and then move the files that created to `static/css` folder in order to take effect. Run the following command from the project `root/static/Scss`:
+
+```bash
+sass style.scss style.css --style=compressed
+```
+#### File Structure
+If you want to make more advanced changes, here is how the SCSS files are organized:
+
+```
+scss/
+├── style.scss              // Main entry point
+├── _variables.scss        // Colors, breakpoints, mixins  ← START HERE
+├── _base.scss              // Global resets and body styles
+├── _nav.scss               // Top navigation and search modal
+├── _layout.scss            // Sidebar, TOC, footer
+├── _content.scss           // Document content, code blocks, tables
+├── _direction-toggle.scss  // RTL/LTR direction switcher
+└── _responsive.scss        // Mobile and tablet overrides
+```
+
+> **💡 Tip:** Because the SCSS files are modular, you only need to edit `_variables.scss` for most color/theme changes. The changes will automatically propagate to all other files via the `var(--...)` references.
